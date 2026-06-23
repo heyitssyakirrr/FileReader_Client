@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Upload Document</h1>
+        <p class="subtitle">
+            Select a PDF file and click Upload. The file will be queued for
+            processing automatically.
+        </p>
+
+        <label class="file-label" for="fileInput">PDF file</label>
+        <input type="file" id="fileInput" accept=".pdf">
+
+        <button type="button" id="submitBtn" disabled>
+            <span class="btn-inner">
+                <span class="spinner" id="spinner"></span>
+                <span id="btnLabel">Upload</span>
+            </span>
+        </button>
+
+        <div class="message" id="statusMessage"></div>
+    </div>
+
+    <!--
+        Inject the extraction API base URL from the server so the JS file
+        can read it without being hardcoded to any environment.
+    -->
+    <script>
+        window.EXTRACTION_ENDPOINT = "{{ api_base }}/extract/single";
+    </script>
+    <script src="/static/upload.js"></script>
+
+</body>
+</html>
