@@ -62,7 +62,7 @@
     });
 
     /* ------------------------------------------------------------------
-       Core submission (mirrors the plan's suggested shape exactly)
+       Core submission
     ------------------------------------------------------------------ */
     async function submitFile(file) {
         setSubmitting(true);
